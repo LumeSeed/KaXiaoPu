@@ -1,251 +1,138 @@
-# kaxiaopu · Dujiao-Next 前台模板
+# kaxiaopu Theme
 
-适用于 **Dujiao-Next v1.5.2** 的独立前台模板，提供移动端适配、深浅色外观和分类侧栏。安装后可在管理后台切换，原有 `classic` 和 `vault` 模板继续保留。
+为 [Dujiao-Next](https://github.com/dujiao-next/dujiao-next) 制作的独立前台模板：分类侧栏、紧凑商品列表、移动端布局与深浅色模式。
 
-本项目是基于 [Dujiao-Next](https://github.com/dujiao-next/dujiao-next) 的第三方模板接入包，不是官方发行版。
+基于 **v1.5.2**。模板标识为 **`kaxiaopu`**，安装后可在后台切换，原有 `classic` / `vault` 模板独立保留。
 
-> **安装方式：将模板接入原版源码，重新编译一体化程序，再到后台启用。**
-> 当前不支持在后台上传 ZIP 直接安装，也不能只上传 `frontend/user` 文件夹完成接入。
+## 免责声明与来源说明
 
-## 功能特点
+1. **第三方项目**：本模板基于 Dujiao-Next 开源代码进行修改，并非官方产品，与上游项目及界面参考站点无隶属、合作或背书关系。
+2. **许可与归属**：原始代码版权归各自作者所有，衍生代码沿用上游 GPL-3.0 许可；具体权利、义务及免责条款以随包许可证为准。第三方字体按其附带许可使用。
+3. **使用与维护**：项目按现状提供，不承诺兼容所有系统版本、第三方插件或部署环境。使用前应自行备份、测试并核对配置；模板展示正常不代表订单、支付和发货流程已验证。
+4. **经营内容**：本项目提供界面模板，不提供商品、账号、支付服务或运营资质，也不为使用者发布的内容或交易作出背书。使用者应确保自己的部署与经营活动符合适用要求。
+5. **品牌与素材**：站点品牌、商标及自行上传的素材，其使用权需由使用者确认；代码许可不代表获得第三方商标或素材授权。
+6. **问题反馈**：如发现代码、素材来源或权利归属问题，请通过仓库 Issue 提供文件位置和说明；涉及个人信息或凭据时请勿公开提交。
 
-- 独立模板标识 `kaxiaopu`，可与 `classic`、`vault` 切换。
-- 适配桌面与手机，支持深色、浅色模式。
-- 商品分类侧栏、分类商品数量和商品列表布局。
-- 移动端个人中心侧栏、三列页脚导航。
-- 商品详情保留标题图标、规格和购买区域，移除独立大图展示模块。
-- 网站名称、Logo、商品和分类等读取目标系统配置与接口。
-- 沿用系统业务接口；未单独定制的页面继续使用系统原页面。
+## 效果与功能
 
-模板包不包含数据库、商品图片、订单、账号、服务器配置或访问密钥。商品购买权限等业务设置由目标系统管理，不随模板安装改变。
-
-## 兼容版本
-
-| 项目 | 版本 / 要求 |
+| 位置 | 调整 |
 | --- | --- |
-| Dujiao-Next | v1.5.2 |
-| 已验证基线提交 | `c8144b2bf4024a999a6567e71f2763baba12a6bc` |
-| 模板包 | 1.0.0 |
-| Python | 3.9 或更高版本，用于安装工具 |
-| Node.js | 24.x，构建环境依据原项目要求 |
-| pnpm | **10.34.3**，与项目 `packageManager` 一致 |
-| Go | 1.26.5 或兼容版本，以项目 `go.mod` 为准 |
+| 商品分类 | 左侧分类导航、选中状态、商品数量 |
+| 商品列表 | 紧凑列表，展示价格、库存与购买入口 |
+| 商品详情 | 保留标题图标、规格与购买区域，移除独立大图模块 |
+| 个人中心 | 移动端使用侧栏菜单 |
+| 页脚 | 移动端三列导航 |
+| 外观 | 深色 / 浅色，桌面与手机适配 |
+| 站点信息 | 站名、Logo、商品和分类读取系统配置与接口 |
 
-其他版本或已修改过的源码需要先评估差异，不保证直接安装。不要通过升级依赖或强行覆盖文件解决安装冲突。
+沿用原系统的业务接口；未单独定制的页面使用系统原页面。包内不附带商品数据、订单、账号、支付配置或品牌扫光动图。
 
-## 文件结构
+## 安装原理
 
-发布模板接入包时，将本说明放在以下目录的根目录：
+Dujiao-Next v1.5.2 的模板需要在源码中注册，不能把一个新目录上传到服务器后自动识别。
 
-```text
-kaxiaopu-reusable-v1.5.2/
-├── README.md               本说明
-├── install.py              检查、安装、恢复源码
-├── manifest.json           兼容基线与文件校验信息
-├── payload/                模板及必要的接入文件
-├── integration.patch       供开发者审查、手工合并的文本补丁
-├── validation.json         验证记录与已知限制
-├── LICENSE                 原项目许可证
-├── THIRD_PARTY_NOTICES.txt  第三方来源说明
-└── SHA256SUMS.txt           发布文件校验值
-```
-
-**只有 README.md 无法安装模板。** 请同时取得 `install.py`、`manifest.json` 和完整 `payload/` 等配套文件。
-
-## 快速安装：已有原版完整源码
-
-先确认原包中同时存在 `go.mod`、`cmd/server` 和 `frontend`。如果只有可执行文件及配置文件，那是运行包，需要另外取得对应版本源码。
-
-### 1. 解压到两个独立目录
-
-以 Windows 为例：
+本包负责接入三部分：
 
 ```text
-D:\projects\dujiao-next\                 原版 v1.5.2 源码
-D:\templates\kaxiaopu-reusable-v1.5.2\    模板接入包
+用户前台 → 新增 kaxiaopu 模板及注册
+管理后台 → 新增 kaxiaopu 模板选择项
+后端配置 → 接受并返回 kaxiaopu 模板标识
 ```
 
-在源码副本或独立分支中操作，保留原始源码。无需手工将整个前台目录拖入原项目。
+接入后重新编译一体化程序。部署仍沿用原站点，不需要另开一个前端服务。
 
-### 2. 检查并导入模板
+## 包内文件
 
-Windows / PowerShell：
+```text
+.
+├── README.md               模板介绍与快速安装
+├── INSTALL.md              详细构建、部署、恢复和排错
+├── LICENSE                 上游 GPL-3.0 许可证
+├── THIRD_PARTY_NOTICES.txt  来源与第三方字体说明
+├── install.py              检查、安装和恢复工具
+├── manifest.json           兼容版本与文件校验
+├── payload/                按原项目目录组织的接入文件
+│   ├── frontend/user/      前台模板及接入改动
+│   ├── frontend/admin/     后台模板选项及文案
+│   └── internal/           后端配置支持及相关测试
+├── integration.patch       供开发者手工合并的文本补丁
+├── validation.json         验证记录
+└── SHA256SUMS.txt           发布校验清单
+```
+
+说明文件需与完整模板接入包一同使用。`payload/` 不能单独作为完整项目运行。
+
+## 快速安装
+
+准备 **Dujiao-Next v1.5.2 完整源码**和本模板接入包，分别解压。原项目根目录应包含 `go.mod` 和 `frontend/`。
+
+在模板包目录运行，将路径替换为你的源码目录：
+
+```bash
+# 检查版本与文件冲突
+python3 install.py check --project /path/to/dujiao-next
+
+# 检查通过后安装
+python3 install.py install --project /path/to/dujiao-next
+```
+
+Windows 可使用 `python`：
 
 ```powershell
-Set-Location "D:\templates\kaxiaopu-reusable-v1.5.2"
 python install.py check --project "D:\projects\dujiao-next"
 python install.py install --project "D:\projects\dujiao-next"
 ```
 
-Linux：
+安装工具自动将文件放到对应位置，原文件备份在 `.kaxiaopu-template-backups/`。新模板主体位于 `frontend/user/src/templates/kaxiaopu/`，无需手动搬移整个前台目录。
 
-```bash
-cd /opt/templates/kaxiaopu-reusable-v1.5.2
-python3 install.py check --project /opt/build/dujiao-next
-python3 install.py install --project /opt/build/dujiao-next
-```
+遇到版本或定制代码冲突时会停止，不要强行覆盖。手工合并可参考 `integration.patch`，二进制字体需从 `payload/` 对照接入。
 
-`--project` 必须指向原项目根目录，而不是 `frontend/user`。
+## 编译与启用
 
-安装工具会校验兼容性，将模板文件放入对应位置，并接入前台模板注册、后台选项与后端配置支持。新模板主体位于：
+安装后按以下顺序构建：
+
+1. 构建 `frontend/user` 用户前台。
+2. 以 `VITE_FULLSTACK=1` 构建 `frontend/admin` 管理后台。
+3. 将两个 `dist/` 的内容分别复制到 `internal/web/dist/user/` 与 `internal/web/dist/admin/`。
+4. 带 `release,fullstack` 标签编译 Go 程序，备份后按原部署方式发布。
+5. 后台进入 **系统设置 → 模板与展示 → 店面模板**，选择 **kaxiaopu** 并保存。
+
+**可直接复制的 Windows / Linux 完整命令见 [安装文档](INSTALL.md#编译一体化程序)。**
+
+构建环境：Python 3.9+、Node.js 24.x、pnpm **10.34.3**、Go **1.26.5** 或兼容版本。其他系统版本需要另行适配。
+
+## 预览与切换
 
 ```text
-frontend/user/src/templates/kaxiaopu/
+/?template=kaxiaopu   预览新模板
+/?template=classic    预览经典模板
+/?template=vault      预览 vault
+/?template=reset      取消预览，跟随后台设置
 ```
 
-`check` 不修改源码。`install` 会先备份受影响文件到项目的 `.kaxiaopu-template-backups/时间戳/`，并输出备份路径。保留该路径以便恢复。重复安装相同文件会跳过；发现版本或自定义代码冲突时会停止。
+URL 预览只对当前浏览器生效，正式启用请在后台保存。无需修改数据库。
 
-> 不要直接用 `payload/` 全量覆盖项目。发生冲突时，应由开发者参照 `integration.patch` 合并。补丁不包含二进制字体，字体文件需从 `payload/frontend/user/src/assets/fonts/` 对照接入。
+## 卸载与更新
 
-## 编译一体化程序
+临时停用：后台切换回 `classic` 或 `vault`。
 
-需要依次构建 **用户前台、管理后台、Go 程序**。后台也增加了模板选项，因此不能只构建用户前台。
+撤销源码：使用安装时生成的备份目录运行 `install.py restore`，然后重新编译部署。具体命令见 [恢复与重新安装](INSTALL.md#恢复与重新安装)。
 
-以下命令面向 Linux x86_64 服务器，使用干净的构建副本。每一步成功后再执行下一步；测试失败时先处理原因。
-
-### Linux 构建
-
-```bash
-cd /opt/build/dujiao-next
-
-# 1. 用户前台；确认版本输出为 10.34.3
-cd frontend/user
-corepack pnpm --version
-corepack pnpm install --frozen-lockfile
-corepack pnpm run test
-corepack pnpm run build
-cd ../..
-
-# 2. 管理后台
-cd frontend/admin
-corepack pnpm install --frozen-lockfile
-corepack pnpm run test
-VITE_FULLSTACK=1 corepack pnpm run build
-cd ../..
-
-# 3. 将两个前端的构建产物放入后端嵌入目录
-mkdir -p internal/web/dist/user internal/web/dist/admin build
-cp -a frontend/user/dist/. internal/web/dist/user/
-cp -a frontend/admin/dist/. internal/web/dist/admin/
-
-# 4. 检查后端并编译
-go vet ./...
-go test ./...
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
-  -tags release,fullstack \
-  -ldflags '-s -w -X github.com/dujiao-next/internal/version.Version=v1.5.2-kaxiaopu-template-1.0.0' \
-  -o build/dujiao-next ./cmd/server
-```
-
-### Windows / PowerShell 构建
-
-```powershell
-Set-Location "D:\projects\dujiao-next"
-
-Push-Location frontend/user
-corepack pnpm --version
-corepack pnpm install --frozen-lockfile
-corepack pnpm run test
-corepack pnpm run build
-Pop-Location
-
-Push-Location frontend/admin
-corepack pnpm install --frozen-lockfile
-corepack pnpm run test
-$env:VITE_FULLSTACK='1'
-corepack pnpm run build
-Remove-Item Env:VITE_FULLSTACK
-Pop-Location
-
-New-Item -ItemType Directory -Force internal/web/dist/user,internal/web/dist/admin,build
-Copy-Item frontend/user/dist/* internal/web/dist/user -Recurse -Force
-Copy-Item frontend/admin/dist/* internal/web/dist/admin -Recurse -Force
-
-go vet ./...
-go test ./...
-
-$env:CGO_ENABLED='0'
-$env:GOOS='linux'
-$env:GOARCH='amd64'
-go build -tags release,fullstack -ldflags '-s -w -X github.com/dujiao-next/internal/version.Version=v1.5.2-kaxiaopu-template-1.0.0' -o build/dujiao-next ./cmd/server
-Remove-Item Env:GOOS,Env:GOARCH,Env:CGO_ENABLED
-```
-
-最终产物为 `build/dujiao-next`，已包含前台和后台资源，不需要单独部署一个前端服务。以上 Windows 命令生成的也是 **Linux 程序**，不能直接在 Windows 运行。
-
-如使用 ARM64 服务器，将 `GOARCH` 改为 `arm64` 并在目标环境验证。重复构建建议使用干净副本，避免嵌入目录残留旧资源。若 `corepack` 不可用，请先按原项目要求准备 pnpm 10.34.3，不要自动改用其他主版本。
-
-## 部署与后台启用
-
-1. 备份现有程序、配置和一致性数据库快照。
-2. 将新程序上传为候选文件，沿用现有部署流程完成停服、替换、启动和健康检查。
-3. 保留原有数据库、上传目录、配置文件和反向代理设置。
-4. 在管理后台打开 **系统设置 → 模板与展示 → 店面模板**，选择 `kaxiaopu` 并保存。
-5. 访问前台 `/?template=reset`，取消当前浏览器的模板预览覆盖。
-
-不要通过上传文件覆盖正在运行的程序，也不要用 v1.5.2 程序直接降级较新系统。安装工具只备份源码，不负责备份线上数据库。
-
-可使用以下地址预览不同模板：
-
-| 路径 | 效果 |
-| --- | --- |
-| `/?template=kaxiaopu` | 当前浏览器预览 kaxiaopu |
-| `/?template=classic` | 当前浏览器预览经典模板 |
-| `/?template=vault` | 当前浏览器预览 vault |
-| `/?template=reset` | 取消预览覆盖，跟随后台设置 |
-
-上线前请在测试环境检查：首页、分类、商品详情与规格、购物车、订单、登录及个人中心、移动端菜单、深浅色和三套模板切换。支付流程需要按目标系统的配置单独验证。
-
-## 恢复与重新安装
-
-只想换回原外观，在后台切换 `classic` 或 `vault` 即可。
-
-如需撤销源码修改，先在后台切回原模板，再使用安装时输出的实际备份目录：
-
-```powershell
-python install.py restore --project "D:\projects\dujiao-next" --backup "D:\projects\dujiao-next\.kaxiaopu-template-backups\实际时间戳"
-```
-
-Linux 使用 `python3` 和对应的 Linux 路径。恢复后需要重新构建、部署。恢复工具遇到安装后的文件被再次修改时会停止，以免覆盖后续工作。
-
-以后重新添加时，重复“检查 → 安装 → 构建 → 部署 → 后台启用”即可。官方升级可能覆盖自定义程序，升级前需要将模板合入目标版本并重新验证。
+升级 Dujiao-Next 前，需将模板合入目标版本重新验证；不要直接将旧版文件覆盖到新版源码。
 
 ## 常见问题
 
-**前台的包到底放在哪里？**
+- **能直接上传 ZIP 安装吗？** 不能，当前是源码接入包，需要重新构建。
+- **只上传前台 dist 可以吗？** 不足以完成后台切换接入，需要部署包含前台、后台和配置支持的一体化程序。
+- **后台没有新模板？** 检查是否构建了管理后台并部署了新程序。
+- **切换后没变化？** 访问 `/?template=reset`，刷新并检查后台是否保存成功。
+- **原模板会被替换吗？** 不会，三套模板使用独立标识；共享接入文件会有必要调整。
 
-安装时由 `install.py` 将源码放入正确目录。编译后，`frontend/user/dist/` 的内容放入 `internal/web/dist/user/`；后台产物同样放入 `internal/web/dist/admin/`，最后编译 Go 一体化程序。
+更多排错与测试边界见 [安装文档](INSTALL.md)。前后台构建、相关测试及 Linux amd64 编译已验证；全量 Go 测试未全部通过，通用包未做真实支付验证，详见配套 `validation.json`。
 
-**后台没有 kaxiaopu，或保存后又变回原模板？**
+## 来源与许可
 
-确认已接入后台选项与后端配置支持，并部署了重新编译的完整程序。仅上传用户前台资源不足以完成安装。
+本项目是基于 Dujiao-Next 的第三方衍生模板，与上游无官方隶属或背书关系。原始代码版权归原作者所有，源码沿用上游 GPL-3.0 许可；分发时保留 `LICENSE`、来源说明及字体 OFL 文件。
 
-**切换后页面没有变化？**
+发布文件中不应包含运行配置、密钥、数据库、线上上传文件或安装备份。详细来源见 `THIRD_PARTY_NOTICES.txt`。
 
-访问 `/?template=reset` 后刷新，确认后台设置已保存，并检查浏览器资源缓存。
-
-**安装提示 Custom changes/version conflict？**
-
-目标源码与支持的基线不一致。保留现有修改，手工审查合并补丁，不要删除冲突文件或强行覆盖。
-
-**页面空白或资源 404？**
-
-检查两个前端是否构建成功、产物是否复制到嵌入目录，以及 Go 构建是否包含 `fullstack` 标签。fullstack 后台产物不能直接当作独立根目录静态站点使用。
-
-## 验证范围
-
-模板接入包曾在干净的官方 v1.5.2 基线上验证：
-
-- 用户前台 71 项测试、管理后台 28 项测试通过。
-- 前台与 fullstack 后台构建通过。
-- 设置相关测试、公开配置接口测试、架构检查及 `go vet` 通过。
-- Linux amd64 一体化编译通过。
-- 安装工具的重复安装、恢复和修改冲突保护通过。
-
-全量 `go test ./...` 在验证时**未全部通过**，涉及 Windows/CGO 环境及数据库集成测试，具体以配套 `validation.json` 为准。通用包未做真实支付验证；上述结果不代表任意版本、环境或自定义源码都已验证。
-
-## 开源与分发
-
-源码及衍生模板沿用原项目的 GPL-3.0 许可，详见发布包中的 `LICENSE`。第三方来源见 `THIRD_PARTY_NOTICES.txt`，Inter 字体保留其 OFL 许可文件。分发时请一并保留许可证和来源说明。
-
-发布到 GitHub 时只提交模板接入文件与说明，不要提交 `.env`、运行配置、数据库、访问密钥、线上上传文件、`node_modules/` 或 `.kaxiaopu-template-backups/`。新增或修改发布文件后，应同步更新校验清单。
