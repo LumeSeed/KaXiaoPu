@@ -1,0 +1,381 @@
+{
+  "name": "kaxiaopu",
+  "package_version": "1.0.0",
+  "base_version": "v1.5.2",
+  "base_commit": "c8144b2bf4024a999a6567e71f2763baba12a6bc",
+  "files": [
+    {
+      "path": "frontend/user/src/assets/fonts/OFL.txt",
+      "before_sha256": null,
+      "after_sha256": "5dd548d31a85f756e01d63e00d7faf1e324103ed3e9102fcbbabf2cc2db6dd39",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/assets/fonts/inter-variable.ttf",
+      "before_sha256": null,
+      "after_sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "binary": true
+    },
+    {
+      "path": "frontend/user/src/assets/fonts/inter.css",
+      "before_sha256": null,
+      "after_sha256": "b9f295926e9ae15c4668e1f56b1611ccd5f0c102e396930f94dfd5ac026d53c9",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/components/CatalogCategories.vue",
+      "before_sha256": null,
+      "after_sha256": "af2cc36a9bbd151fd05b06cdffd1e8b82fd187631d9958cc30632ac257c47e60",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/components/CatalogCategoryTree.vue",
+      "before_sha256": null,
+      "after_sha256": "e2435b08c92ddf7bffd0549240227991d96d415c6c55ab271a19246f50dac622",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/components/PersonalCenterMobileMenu.vue",
+      "before_sha256": null,
+      "after_sha256": "9862fd017726cca6169d2ef31e5d1ea246a5b710e56e5518b733098dc78153a0",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/components/StorefrontPrice.vue",
+      "before_sha256": null,
+      "after_sha256": "fc9f6e71036b3fc501859fb5b3bc0316890aecc7b6ba2b651a1fdfa1112405ec",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/components/StorefrontProductMeta.vue",
+      "before_sha256": null,
+      "after_sha256": "6bc3fcd07080502439a6c598df6c39fd2920c15bd27da46fbe8e0a2d7d062697",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/components/StorefrontSearch.vue",
+      "before_sha256": null,
+      "after_sha256": "2aec98976b68cd5db5bdc0c69c55e8d9cefaadde35dd103b6b7e3d816000247d",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/composables/useCategoryProductCounts.ts",
+      "before_sha256": null,
+      "after_sha256": "d93f81ca37d0c9691c31c1b3e8da6a952da0744d98671a123325477ba53696d7",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/storefront.css",
+      "before_sha256": null,
+      "after_sha256": "3bf8a9ad28ee321071b323ef867f6f19f6cef29f7d6f8a1b2372e8e613a7e6fa",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/About.vue",
+      "before_sha256": null,
+      "after_sha256": "6bba8f7d02e27243afadcbd55bc03b99c82953037e130d97f90700c03aa8581d",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/Blog.vue",
+      "before_sha256": null,
+      "after_sha256": "8c1d7e30783b053635a4e35683ae7e65f7dc67b78c77f6df1c82d9076217cb14",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/BlogDetail.vue",
+      "before_sha256": null,
+      "after_sha256": "f465322960ffc74164f6c983d435eab52c882e0216c385fe52eabe723718adad",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/Cart.vue",
+      "before_sha256": null,
+      "after_sha256": "d750bceee350861d4250bf6aaf5d62ec34ce2850d1de0e6392f8f61ef0a2df07",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/Checkout.vue",
+      "before_sha256": null,
+      "after_sha256": "c680d7e3870269a28e58db7914f7313f0d3a0f382dfb11abfe765fab4f22a605",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/GuestOrderDetail.vue",
+      "before_sha256": null,
+      "after_sha256": "85f2eece570373cfcaaa13d2c029f8bb4d4c6351144094cde9b47aec5f8d1ed8",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/GuestOrders.vue",
+      "before_sha256": null,
+      "after_sha256": "b2d42d124c530f1ce477b6699100a0acf30007e22dde541ec2807a9663f98143",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/Home.vue",
+      "before_sha256": null,
+      "after_sha256": "0e4ca500c2520543ecc3252d6a858832bd57132e6ffcbf9e9e6e8398d95fd233",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/Legal.vue",
+      "before_sha256": null,
+      "after_sha256": "177a02f216a13dd2750cdf75d7db0a5048503ee6c472e9f8d75bc75471b0a461",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/NotFound.vue",
+      "before_sha256": null,
+      "after_sha256": "16495d5adec46f8d9055bae9c8a1632a249d1e4a58f3f5a62cc6bb4cb2d130a2",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/Notice.vue",
+      "before_sha256": null,
+      "after_sha256": "2b3965744a4097374572b34bc85c29f79880c06d3de89a26bc6ea9dfe51e9414",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/OrderDetail.vue",
+      "before_sha256": null,
+      "after_sha256": "a01e391b960b05e3adaaa46937e06dc20ee378b4b4e2107a942ab5754040c823",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/Payment.vue",
+      "before_sha256": null,
+      "after_sha256": "959896c4d681d3c665a37ce2693f0f55cefad358652c3512f43365e9e02f6ac0",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/PersonalCenter.vue",
+      "before_sha256": null,
+      "after_sha256": "9fc2c81e5dffcfafa3649fe4c46b5b1b9101b8b4079f1429685751bc71fb473b",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/ProductDetail.vue",
+      "before_sha256": null,
+      "after_sha256": "04a10b58015cec34bd9a1168d708ccb622817c3185ff2d142c88e5662d926a45",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/Products.vue",
+      "before_sha256": null,
+      "after_sha256": "a6bf643f49ba14028020f366d19bd2905a795598613ed9ad4fc36faacd3cd70c",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/RechargeOrderDetail.vue",
+      "before_sha256": null,
+      "after_sha256": "1489fa1bfa0d40e0f70373cb23fdc89eff8604b14aed67924c055ea48f531e99",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/auth/Forgot.vue",
+      "before_sha256": null,
+      "after_sha256": "6d9e4a54df1161a843d1e5c435b7ad693342ae03c17ca0de718c63145e80e09c",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/auth/GoogleCallback.vue",
+      "before_sha256": null,
+      "after_sha256": "532a119d2adc3bb2d238f64dfcac782cc97f0f7bad512fd184e7919e3d480cf6",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/auth/Login.vue",
+      "before_sha256": null,
+      "after_sha256": "e57439b4af52624344b67772fc6b4eb3b974a637b1b8a56a12da296bf33c7746",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/auth/Register.vue",
+      "before_sha256": null,
+      "after_sha256": "962b6b381a34658631ff6f67e732a9366fbee0e940e9710d17385e0f9d531f90",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/auth/TelegramCallback.vue",
+      "before_sha256": null,
+      "after_sha256": "aaeda9e1d93c9f154eb872433b587195f76facc69e9569d4b03947e8d911ff4b",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultBannerHero.vue",
+      "before_sha256": null,
+      "after_sha256": "3a4e513460c3c30b690d093f7c4311bf07af9f5753f8a89831e74a6d6fcc009b",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultCategorySidebar.vue",
+      "before_sha256": null,
+      "after_sha256": "cf9975564a69680f1832ced726f6862f3e1af6edf4d78c94db71a6d25773dbcc",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultCheckoutSteps.vue",
+      "before_sha256": null,
+      "after_sha256": "42065c52d7ed5901da1b879d7a2699c03b45e6ab75488315ea675c8a224c6388",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultOrderBody.vue",
+      "before_sha256": null,
+      "after_sha256": "ef2866f5481641f5d2741590aa86f0c6457cafef17596a82c30d00d1c3c55504",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultOrderFulfillment.vue",
+      "before_sha256": null,
+      "after_sha256": "ea7f91fe5f62741ad5905c07f048c1d1ef998a5db3e8b6c0fc68342704888801",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultOrderItem.vue",
+      "before_sha256": null,
+      "after_sha256": "10fdd02b0964740ca0f40632d078082c3c544e3e7922b2d34964a009f6e7ddb8",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultProductCard.vue",
+      "before_sha256": null,
+      "after_sha256": "7b4896df8a5552f56ad33ba9a7245bdbe42d21e7eb7c2bfa6c505dd0a5caec52",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultProductListItem.vue",
+      "before_sha256": null,
+      "after_sha256": "82aae6d4300074b4332a16fca141e86a8e7e9279933d497ba369cfb9c9e5a412",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultProductMobileBar.vue",
+      "before_sha256": null,
+      "after_sha256": "6da7edd0ef65f3ee3075e3c086eb95752d90c53f60f6bce5875351e3fcae7c1d",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/components/VaultProductQuickBuy.vue",
+      "before_sha256": null,
+      "after_sha256": "835e8fc0c782b5292e3bea6f1ef6801946f9161509630187c9b3de18ed39ad37",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/layout/VaultLayout.vue",
+      "before_sha256": null,
+      "after_sha256": "82ae877b6bbfbca47593eaa3596a618f1aa77ce068fdb0fdc4a1daff0db8c890",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/kaxiaopu/styles/vault.css",
+      "before_sha256": null,
+      "after_sha256": "4a5fa296d5aa6e0b2fef4f15a3862cb12c1aa8596752034a27e0dc446b50de98",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/utils/storefrontTemplate.ts",
+      "before_sha256": null,
+      "after_sha256": "77396aa7d6ebdc27910c004ccdfdea81621ea0b1fdeaf68ee6fc5b1aa7033519",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/tests/storefrontTemplate.test.ts",
+      "before_sha256": null,
+      "after_sha256": "dcbcd735d797a2263c796e7d65a193762d738cdaaf03894621d80d378997574f",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/tests/templateIsolation.test.ts",
+      "before_sha256": null,
+      "after_sha256": "5f4f239a8a52d2b7fbac9781cdbda6c5a7aaa97ce748179e4550587a62b2371e",
+      "binary": false
+    },
+    {
+      "path": "frontend/admin/src/i18n/index.ts",
+      "before_sha256": "16de68c1de7b2a6328d3be478b52aea683ce32fb1ea0b384cff1e637f10b421d",
+      "after_sha256": "81bf6d1d5681886a15c6a7c4e39be8ecaef506dc34cb98e1fdb1c138def1a4f8",
+      "binary": false
+    },
+    {
+      "path": "frontend/admin/src/views/admin/Settings.vue",
+      "before_sha256": "74064084995157367858056eaa9f0ed4304f7e798318aad6759c40308cbc0e85",
+      "after_sha256": "765834e13112bab7ee55dd93a09e02e84394ba028101e21a51cc76ef52e04d50",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/App.vue",
+      "before_sha256": "2573bea2bbcfa1d28fd25a8fddaf23b31a1f6c0480a0fba993eea518a26d6021",
+      "after_sha256": "2dc6c6119f132cec71ef60aef10ebf1dfbf0ee989305a8ec0b98fd2b8f3de26e",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/i18n/locales/en-US.json",
+      "before_sha256": "5d1843deca9b5ad689618e251110c2dcae028ed9775e3d0d7c9769503ac33cd9",
+      "after_sha256": "13a0962e58396bf6b7018f70b52aff9bc2208ea73553270eff4b115b7c0e8aa3",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/i18n/locales/zh-CN.json",
+      "before_sha256": "7578c5a510387d19adbe3b6942f00a56f636a32c7a756da967a5f4fccd9ef1cb",
+      "after_sha256": "dffc27c2f5caa548a7ff1bcd039719f53d6ea787652005c653e7052c80afbd24",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/i18n/locales/zh-TW.json",
+      "before_sha256": "eafefd17674ea9acc640bd0271f29a4e189a0f8ae56167fe8cb33de81d6cf894",
+      "after_sha256": "f9784bbbbe9104343ab916b8eca27231cd1a1400ce3b03b65bbb7800b6489dfc",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/main.ts",
+      "before_sha256": "ce3f95b51021a9cb079a5fd88d704df78bd8623aa6437094b371894da0c5f5d0",
+      "after_sha256": "5647d43d84222b04418627f82744e6151279f4b4c0af06cbe250a324c10efd3a",
+      "binary": false
+    },
+    {
+      "path": "frontend/user/src/templates/registry.ts",
+      "before_sha256": "1f565e606e3ff3476a99ace598ed3e1ee4aaebf348b3160cb1545473ef096bf6",
+      "after_sha256": "c7d2c6c673755a79c32ffc29cdff4e6663d7ee64fcb212b18103b999df73ff94",
+      "binary": false
+    },
+    {
+      "path": "internal/constants/constants.go",
+      "before_sha256": "24e9a20fc6b29d8c5ec92ccd70e8b83911a0385c3c822eb6e6c146049bac588d",
+      "after_sha256": "4059491b9f58fe57989058d9368b4c7473fa7b6d4f278844f252e714b582b213",
+      "binary": false
+    },
+    {
+      "path": "internal/modules/settings/application/general.go",
+      "before_sha256": "e34949470ec031ab550cdc44353813e15092c48280bbc554acd373fd82b622b7",
+      "after_sha256": "b3895733640a238a9cb1dca60515775075bb443829902cd8111336a5734ed2c6",
+      "binary": false
+    },
+    {
+      "path": "internal/modules/settings/application/site_normalize.go",
+      "before_sha256": "329c5feb4e6b7b7bdd226c19f8cb8e4634932d5097656c63274d69076fb10855",
+      "after_sha256": "c67a3fd2fdedca028c65921fbbb0b4653bfd6e85693c5e0d7dd19e610ba74eb4",
+      "binary": false
+    },
+    {
+      "path": "internal/modules/settings/application/site_normalize_test.go",
+      "before_sha256": "0956a89dbdc35185cc03766f8a848e8a11dc0f6bd0d05583e4ca63b99fe17fa3",
+      "after_sha256": "39b4a289f938cf00bc16caa11c41d7c4c5f76319a3c9069f287cc7bf3c0f1ca3",
+      "binary": false
+    },
+    {
+      "path": "internal/modules/settings/transport/http/public/google_auth_test.go",
+      "before_sha256": "61704dbd1f163bc0f7aff7a013fb2b713efeeab16813dfd25233f1266df0590a",
+      "after_sha256": "50d86455603f7173886ccc2a28f3039f78af70ec3a0a034c654e876ed70d25c8",
+      "binary": false
+    }
+  ],
+  "version_guards": {
+    "go.mod": "86c02fa3bc442960ac50887c3871ac213cfc09346d4ebeb919358ccc48af1e22",
+    "frontend/user/package.json": "6b25dcc29b43252a15ccc3ba2e4980606ef607030501fa86ff328091940b4147",
+    "frontend/user/pnpm-lock.yaml": "eedfdf193348feac6654531818c1d8a1f677d1196576350b713b7ef0d0245904",
+    "frontend/admin/package.json": "93672d1cd9e178c6e63e73fee1da6eceeec0d41ae6cdb1765bf0c39b62a23290",
+    "frontend/admin/pnpm-lock.yaml": "55d9cce304b671f720f20aaa05c976ab585113b46d698c0aef2e7e7ddb105931"
+  }
+}

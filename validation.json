@@ -1,0 +1,56 @@
+{
+  "package": "kaxiaopu",
+  "package_version": "1.0.0",
+  "date": "2026-11-17",
+  "base_version": "v1.5.2",
+  "base_commit": "c8144b2bf4024a999a6567e71f2763baba12a6bc",
+  "integration_files": 61,
+  "scope": "Reusable template only. No original site branding/SEO/promotion customizations or business data. No live deployment performed.",
+  "templates": [
+    "classic",
+    "vault",
+    "kaxiaopu"
+  ],
+  "unchanged_original_files": {
+    "frontend/user/src/views/": 42,
+    "frontend/user/src/components/": 111,
+    "frontend/user/src/templates/vault/": 33
+  },
+  "base_css_unchanged": true,
+  "development_proxy_unchanged": true,
+  "tests": {
+    "user_passed": 71,
+    "admin_passed": 28,
+    "settings_application_public_api_architecture": "passed",
+    "go_vet": "passed",
+    "changed_go_files_gofmt": "clean",
+    "go_full": "FAILED: Windows/CGO and database integration tests; not claimed as passed",
+    "go_full_failed_packages": [
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "FAIL",
+      "FAIL"
+    ],
+    "installer": {
+      "clean_check": true,
+      "install": true,
+      "repeat_install_idempotent": true,
+      "restore_exact_original_bytes": true,
+      "restore_protects_later_edits": true,
+      "install_refuses_conflicts_without_partial_write": true
+    }
+  },
+  "builds": {
+    "user": "passed",
+    "admin_fullstack": "passed",
+    "linux_amd64_fullstack": "passed"
+  },
+  "limitations": [
+    "No live deployment or real order/payment test for this reusable package.",
+    "Automatic installation supports checked v1.5.2 file/dependency baselines only; customized files require manual merge.",
+    "The patch is text-only; the Inter binary font is supplied through payload and install.py."
+  ]
+}
