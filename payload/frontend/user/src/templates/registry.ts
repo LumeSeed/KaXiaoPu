@@ -6,8 +6,8 @@ export { DEFAULT_TEMPLATE, STOREFRONT_TEMPLATES, type StorefrontTemplate } from 
  * 店面模板系统（站长全局切换 · 渐进并行迁移）
  *
  * - 当前激活模板优先级：本地预览覆盖(?template=) > 站点全局配置(storefront_template) > 上次访问时的模板 > 默认 classic
- * - vault 和 kaxiaopu 使用各自独立目录，缺页时自动回退 classic。
- * - 保留 classic、vault、kaxiaopu 三个独立标识。
+ * - classic 沿用现有 ../views/*，vault 落在 ./vault/*，atelier 落在 ./atelier/*；
+ *   独立模板缺页时自动回退 classic，并通过各自 Layout/CSS 令牌统一整站视觉。
  */
 
 const OVERRIDE_KEY = 'dj-storefront-template'
@@ -83,22 +83,28 @@ export const getActiveTemplate = (): StorefrontTemplate => {
     return rememberedTemplate ?? DEFAULT_TEMPLATE
 }
 
-// vault 模板页面（按需动态加载）。key 形如 './vault/Home.vue'
+// 各独立模板页面（按需动态加载）。key 形如 './vault/Home.vue'、'./atelier/Home.vue'
 const vaultViews = import.meta.glob('./vault/**/*.vue')
+const atelierViews = import.meta.glob('./atelier/**/*.vue')
 const kaxiaopuViews = import.meta.glob('./kaxiaopu/**/*.vue')
 
 type ViewLoader = () => Promise<unknown>
 
 /**
- * 路由 view 解析器：按当前模板从其独立目录加载页面，否则回退 classic loader。
+ * 路由 view 解析器：当前模板下若存在同名页面则加载对应模板页，否则回退传入的 classic loader。
  * 用法：`component: templateView('Home', () => import('../views/Home.vue'))`
  */
 export const templateView = (name: string, classicLoader: ViewLoader): ViewLoader => {
     return () => {
-        const template = getActiveTemplate()
-        if (template !== 'classic') {
-            const views = template === 'vault' ? vaultViews : kaxiaopuViews
-            const loader = views[`./${template}/${name}.vue`]
+        const active = getActiveTemplate()
+        if (active === 'kaxiaopu') {
+            const loader = kaxiaopuViews[`./kaxiaopu/${name}.vue`]
+            if (loader) return loader()
+        } else if (active === 'vault') {
+            const loader = vaultViews[`./vault/${name}.vue`]
+            if (loader) return loader()
+        } else if (active === 'atelier') {
+            const loader = atelierViews[`./atelier/${name}.vue`]
             if (loader) return loader()
         }
         return classicLoader()

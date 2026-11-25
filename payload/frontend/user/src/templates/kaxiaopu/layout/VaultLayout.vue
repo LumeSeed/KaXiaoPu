@@ -154,6 +154,8 @@ import { useNavConfig, type NavItem } from '../../../composables/useNavConfig'
 import { useTheme } from '../../../utils/theme'
 import { getImageUrl } from '../../../utils/image'
 import { getLocalizedText } from '../../../utils/resellerSiteConfig'
+import '../../../assets/fonts/inter.css'
+import '../../../storefront.css'
 import '../styles/vault.css'
 
 const { t } = useI18n()

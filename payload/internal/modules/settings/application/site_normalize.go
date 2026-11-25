@@ -332,15 +332,18 @@ func normalizeSiteTemplateMode(raw interface{}) string {
 	return "card"
 }
 
-// normalizeStorefrontTemplate 保留 classic / vault / kaxiaopu 三个独立模板。
+// normalizeStorefrontTemplate returns a supported template or the default.
 func normalizeStorefrontTemplate(raw interface{}) string {
 	switch normalizeSettingText(raw) {
 	case constants.StorefrontTemplateVault:
 		return constants.StorefrontTemplateVault
 	case constants.StorefrontTemplateKaxiaopu:
 		return constants.StorefrontTemplateKaxiaopu
+	case constants.StorefrontTemplateAtelier:
+		return constants.StorefrontTemplateAtelier
+	default:
+		return constants.StorefrontTemplateDefault
 	}
-	return constants.StorefrontTemplateDefault
 }
 
 func normalizeNavConfig(value map[string]interface{}) jsonmap.JSON {

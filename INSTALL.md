@@ -2,7 +2,7 @@
 
 [返回模板介绍](README.md)
 
-适用于 **Dujiao-Next v1.5.2** 的独立前台模板，提供移动端适配、深浅色外观和分类侧栏。安装后可在管理后台切换，原有 `classic` 和 `vault` 模板继续保留。
+适用于 **Dujiao-Next v1.6.1** 的独立前台模板，提供移动端适配、深浅色外观和分类侧栏。安装后可在管理后台切换，原有 `classic`、`vault` 和 `atelier` 模板继续保留。
 
 本项目是基于 [Dujiao-Next](https://github.com/dujiao-next/dujiao-next) 的第三方模板接入包，不是官方发行版。
 
@@ -11,7 +11,7 @@
 
 ## 功能特点
 
-- 独立模板标识 `kaxiaopu`，可与 `classic`、`vault` 切换。
+- 独立模板标识 `kaxiaopu`，可与 `classic`、`vault`、`atelier` 切换。
 - 适配桌面与手机，支持深色、浅色模式。
 - 商品分类侧栏、分类商品数量和商品列表布局。
 - 移动端个人中心侧栏、三列页脚导航。
@@ -25,9 +25,9 @@
 
 | 项目 | 版本 / 要求 |
 | --- | --- |
-| Dujiao-Next | v1.5.2 |
-| 已验证基线提交 | `c8144b2bf4024a999a6567e71f2763baba12a6bc` |
-| 模板包 | 1.0.0 |
+| Dujiao-Next | v1.6.1 |
+| 已验证基线提交 | `f7b4354f121bae4f265724c687042ebea1a5934a` |
+| 模板包 | 1.1.0 |
 | Python | 3.9 或更高版本，用于安装工具 |
 | Node.js | 24.x，构建环境依据原项目要求 |
 | pnpm | **10.34.3**，与项目 `packageManager` 一致 |
@@ -40,7 +40,7 @@
 发布模板接入包时，将本说明放在以下目录的根目录：
 
 ```text
-kaxiaopu-reusable-v1.5.2/
+kaxiaopu-reusable-v1.6.1/
 ├── README.md               本说明
 ├── install.py              检查、安装、恢复源码
 ├── manifest.json           兼容基线与文件校验信息
@@ -63,8 +63,8 @@ kaxiaopu-reusable-v1.5.2/
 以 Windows 为例：
 
 ```text
-D:\projects\dujiao-next\                 原版 v1.5.2 源码
-D:\templates\kaxiaopu-reusable-v1.5.2\    模板接入包
+D:\projects\dujiao-next\                 原版 v1.6.1 源码
+D:\templates\kaxiaopu-reusable-v1.6.1\    模板接入包
 ```
 
 在源码副本或独立分支中操作，保留原始源码。无需手工将整个前台目录拖入原项目。
@@ -74,7 +74,7 @@ D:\templates\kaxiaopu-reusable-v1.5.2\    模板接入包
 Windows / PowerShell：
 
 ```powershell
-Set-Location "D:\templates\kaxiaopu-reusable-v1.5.2"
+Set-Location "D:\templates\kaxiaopu-reusable-v1.6.1"
 python install.py check --project "D:\projects\dujiao-next"
 python install.py install --project "D:\projects\dujiao-next"
 ```
@@ -82,7 +82,7 @@ python install.py install --project "D:\projects\dujiao-next"
 Linux：
 
 ```bash
-cd /opt/templates/kaxiaopu-reusable-v1.5.2
+cd /opt/templates/kaxiaopu-reusable-v1.6.1
 python3 install.py check --project /opt/build/dujiao-next
 python3 install.py install --project /opt/build/dujiao-next
 ```
@@ -97,7 +97,7 @@ frontend/user/src/templates/kaxiaopu/
 
 `check` 不修改源码。`install` 会先备份受影响文件到项目的 `.kaxiaopu-template-backups/时间戳/`，并输出备份路径。保留该路径以便恢复。重复安装相同文件会跳过；发现版本或自定义代码冲突时会停止。
 
-> 不要直接用 `payload/` 全量覆盖项目。发生冲突时，应由开发者参照 `integration.patch` 合并。补丁不包含二进制字体，字体文件需从 `payload/frontend/user/src/assets/fonts/` 对照接入。
+> 不要直接用 `payload/` 全量覆盖项目。发生冲突时，应由开发者参照 `integration.patch` 合并。补丁已包含字体的 Git 二进制差异。
 
 ## 编译一体化程序
 
@@ -135,7 +135,7 @@ go vet ./...
 go test ./...
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
   -tags release,fullstack \
-  -ldflags '-s -w -X github.com/dujiao-next/internal/version.Version=v1.5.2-kaxiaopu-template-1.0.0' \
+  -ldflags '-s -w -X github.com/dujiao-next/internal/version.Version=v1.6.1-kaxiaopu-template-1.1.0' \
   -o build/dujiao-next ./cmd/server
 ```
 
@@ -169,7 +169,7 @@ go test ./...
 $env:CGO_ENABLED='0'
 $env:GOOS='linux'
 $env:GOARCH='amd64'
-go build -tags release,fullstack -ldflags '-s -w -X github.com/dujiao-next/internal/version.Version=v1.5.2-kaxiaopu-template-1.0.0' -o build/dujiao-next ./cmd/server
+go build -tags release,fullstack -ldflags '-s -w -X github.com/dujiao-next/internal/version.Version=v1.6.1-kaxiaopu-template-1.1.0' -o build/dujiao-next ./cmd/server
 Remove-Item Env:GOOS,Env:GOARCH,Env:CGO_ENABLED
 ```
 
@@ -185,7 +185,7 @@ Remove-Item Env:GOOS,Env:GOARCH,Env:CGO_ENABLED
 4. 在管理后台打开 **系统设置 → 模板与展示 → 店面模板**，选择 `kaxiaopu` 并保存。
 5. 访问前台 `/?template=reset`，取消当前浏览器的模板预览覆盖。
 
-不要通过上传文件覆盖正在运行的程序，也不要用 v1.5.2 程序直接降级较新系统。安装工具只备份源码，不负责备份线上数据库。
+不要通过上传文件覆盖正在运行的程序，也不要用 v1.6.1 程序直接降级较新系统。安装工具只备份源码，不负责备份线上数据库。
 
 可使用以下地址预览不同模板：
 
@@ -196,11 +196,11 @@ Remove-Item Env:GOOS,Env:GOARCH,Env:CGO_ENABLED
 | `/?template=vault` | 当前浏览器预览 vault |
 | `/?template=reset` | 取消预览覆盖，跟随后台设置 |
 
-上线前请在测试环境检查：首页、分类、商品详情与规格、购物车、订单、登录及个人中心、移动端菜单、深浅色和三套模板切换。支付流程需要按目标系统的配置单独验证。
+上线前请在测试环境检查：首页、分类、商品详情与规格、购物车、订单、登录及个人中心、移动端菜单、深浅色和四套模板切换。支付流程需要按目标系统的配置单独验证。
 
 ## 恢复与重新安装
 
-只想换回原外观，在后台切换 `classic` 或 `vault` 即可。
+只想换回原外观，在后台切换 `classic`、`vault` 或 `atelier` 即可。
 
 如需撤销源码修改，先在后台切回原模板，再使用安装时输出的实际备份目录：
 
@@ -236,9 +236,9 @@ Linux 使用 `python3` 和对应的 Linux 路径。恢复后需要重新构建�
 
 ## 验证范围
 
-模板接入包曾在干净的官方 v1.5.2 基线上验证：
+模板接入包曾在干净的官方 v1.6.1 基线上验证：
 
-- 用户前台 71 项测试、管理后台 28 项测试通过。
+- 用户前台 87 项测试、管理后台 55 项测试通过。
 - 前台与 fullstack 后台构建通过。
 - 设置相关测试、公开配置接口测试、架构检查及 `go vet` 通过。
 - Linux amd64 一体化编译通过。

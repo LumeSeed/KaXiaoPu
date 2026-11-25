@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import { normalizeStorefrontTemplate, STOREFRONT_TEMPLATES } from '../src/utils/storefrontTemplate.ts'
 
 test('storefront identifiers expose classic, original vault and kaxiaopu', () => {
-  assert.deepEqual(STOREFRONT_TEMPLATES, ['classic', 'vault', 'kaxiaopu'])
+  assert.deepEqual(STOREFRONT_TEMPLATES, ['classic', 'vault', 'atelier', 'kaxiaopu'])
   assert.equal(normalizeStorefrontTemplate(' kaxiaopu '), 'kaxiaopu')
   assert.equal(normalizeStorefrontTemplate('classic'), 'classic')
 })

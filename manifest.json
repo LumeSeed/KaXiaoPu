@@ -1,8 +1,8 @@
 {
   "name": "kaxiaopu",
-  "package_version": "1.0.0",
-  "base_version": "v1.5.2",
-  "base_commit": "c8144b2bf4024a999a6567e71f2763baba12a6bc",
+  "package_version": "1.1.0",
+  "base_version": "v1.6.1",
+  "base_commit": "f7b4354f121bae4f265724c687042ebea1a5934a",
   "files": [
     {
       "path": "frontend/user/src/assets/fonts/OFL.txt",
@@ -265,7 +265,7 @@
     {
       "path": "frontend/user/src/templates/kaxiaopu/layout/VaultLayout.vue",
       "before_sha256": null,
-      "after_sha256": "82ae877b6bbfbca47593eaa3596a618f1aa77ce068fdb0fdc4a1daff0db8c890",
+      "after_sha256": "bbc0e3ea71814be23d11387e46748af9ddf4c4a8224346f77662bf6c33460f64",
       "binary": false
     },
     {
@@ -277,13 +277,13 @@
     {
       "path": "frontend/user/src/utils/storefrontTemplate.ts",
       "before_sha256": null,
-      "after_sha256": "77396aa7d6ebdc27910c004ccdfdea81621ea0b1fdeaf68ee6fc5b1aa7033519",
+      "after_sha256": "e48410d2d9fa5b940c3f655b3267cc3cf2515472ab30dd6ed506a0e29de32006",
       "binary": false
     },
     {
       "path": "frontend/user/tests/storefrontTemplate.test.ts",
       "before_sha256": null,
-      "after_sha256": "dcbcd735d797a2263c796e7d65a193762d738cdaaf03894621d80d378997574f",
+      "after_sha256": "78a21661143f215926aac11ae5e52649537b3cc976175549c0a9624c489693a6",
       "binary": false
     },
     {
@@ -294,74 +294,68 @@
     },
     {
       "path": "frontend/admin/src/i18n/index.ts",
-      "before_sha256": "16de68c1de7b2a6328d3be478b52aea683ce32fb1ea0b384cff1e637f10b421d",
-      "after_sha256": "81bf6d1d5681886a15c6a7c4e39be8ecaef506dc34cb98e1fdb1c138def1a4f8",
+      "before_sha256": "27ed2584f5ad5e55bde10bccc03021b967e556df2b532e037895076eee42a97f",
+      "after_sha256": "dec03ec391f6cdeec6cd8754d43181f38d7df0d0925a5d8f5358a6e592f2772f",
       "binary": false
     },
     {
       "path": "frontend/admin/src/views/admin/Settings.vue",
-      "before_sha256": "74064084995157367858056eaa9f0ed4304f7e798318aad6759c40308cbc0e85",
-      "after_sha256": "765834e13112bab7ee55dd93a09e02e84394ba028101e21a51cc76ef52e04d50",
+      "before_sha256": "55b56464e7f6aa465a393f8398dc751e10d8d89da3cfd0dd8603f4e0dc6ad0ed",
+      "after_sha256": "204b8056fefe3e47eb6d112a3c6619a97a2663b161420a5f2879a8f745e7d4e7",
       "binary": false
     },
     {
       "path": "frontend/user/src/App.vue",
-      "before_sha256": "2573bea2bbcfa1d28fd25a8fddaf23b31a1f6c0480a0fba993eea518a26d6021",
-      "after_sha256": "2dc6c6119f132cec71ef60aef10ebf1dfbf0ee989305a8ec0b98fd2b8f3de26e",
+      "before_sha256": "2f208b49863839d311e2824387a26658efb1cb058aa66d90a6b169fc26a615c6",
+      "after_sha256": "289ac2239c860e98ff97598eaca59a48abc8fcce4466d61d00c8a821c0ec5989",
       "binary": false
     },
     {
       "path": "frontend/user/src/i18n/locales/en-US.json",
-      "before_sha256": "5d1843deca9b5ad689618e251110c2dcae028ed9775e3d0d7c9769503ac33cd9",
-      "after_sha256": "13a0962e58396bf6b7018f70b52aff9bc2208ea73553270eff4b115b7c0e8aa3",
+      "before_sha256": "ea57cc1246c010c7553146cd9038d057e1723b66c373015807cdd8fb4106e264",
+      "after_sha256": "9a788702f9c1356ae4e345c3df213c4bc4e87a4c2c82aab0988959b2448c2062",
       "binary": false
     },
     {
       "path": "frontend/user/src/i18n/locales/zh-CN.json",
-      "before_sha256": "7578c5a510387d19adbe3b6942f00a56f636a32c7a756da967a5f4fccd9ef1cb",
-      "after_sha256": "dffc27c2f5caa548a7ff1bcd039719f53d6ea787652005c653e7052c80afbd24",
+      "before_sha256": "bddcdbb1971492c41450849d39b88e827855cd206a493f63e8b62021c38886c9",
+      "after_sha256": "a5de7a6569cc06659b1f137b38a3a7667c533c1bc60a3a1891e29110e1b2dfda",
       "binary": false
     },
     {
       "path": "frontend/user/src/i18n/locales/zh-TW.json",
-      "before_sha256": "eafefd17674ea9acc640bd0271f29a4e189a0f8ae56167fe8cb33de81d6cf894",
-      "after_sha256": "f9784bbbbe9104343ab916b8eca27231cd1a1400ce3b03b65bbb7800b6489dfc",
-      "binary": false
-    },
-    {
-      "path": "frontend/user/src/main.ts",
-      "before_sha256": "ce3f95b51021a9cb079a5fd88d704df78bd8623aa6437094b371894da0c5f5d0",
-      "after_sha256": "5647d43d84222b04418627f82744e6151279f4b4c0af06cbe250a324c10efd3a",
+      "before_sha256": "debc7c4c88c1f0e9ff2f853e21cebbd780e34af90656a4f679a16dad7df6cc01",
+      "after_sha256": "5bb52d6c69e8d94b8ef62eda444a6340c2c3e6dcfbdb0e0db9dd43a8cd798b35",
       "binary": false
     },
     {
       "path": "frontend/user/src/templates/registry.ts",
-      "before_sha256": "1f565e606e3ff3476a99ace598ed3e1ee4aaebf348b3160cb1545473ef096bf6",
-      "after_sha256": "c7d2c6c673755a79c32ffc29cdff4e6663d7ee64fcb212b18103b999df73ff94",
+      "before_sha256": "9532dbdc5ecfda287fb0c9ba1e9f88ec04add27a3c4659d1171042d3f32e3c80",
+      "after_sha256": "d444115d64405709e9e1104b241ed6679f365b5d5f61841412c7b7f8f61f875d",
       "binary": false
     },
     {
       "path": "internal/constants/constants.go",
-      "before_sha256": "24e9a20fc6b29d8c5ec92ccd70e8b83911a0385c3c822eb6e6c146049bac588d",
-      "after_sha256": "4059491b9f58fe57989058d9368b4c7473fa7b6d4f278844f252e714b582b213",
+      "before_sha256": "2baf16a2dda4e29772bce33ecc3c432d65113fe4aff4969ea71bd40f21caad11",
+      "after_sha256": "c5656e2e4d36c1812b58c8b80a5abffbc11840ba8206d8443d5320d8576d8b06",
       "binary": false
     },
     {
       "path": "internal/modules/settings/application/general.go",
-      "before_sha256": "e34949470ec031ab550cdc44353813e15092c48280bbc554acd373fd82b622b7",
-      "after_sha256": "b3895733640a238a9cb1dca60515775075bb443829902cd8111336a5734ed2c6",
+      "before_sha256": "a729772eb47b14f5d1dd8a1f187a472305a4b6c55abf239167509216f5566870",
+      "after_sha256": "12e386d8cb70bf57073f498a88db3337fbc65ebbcb135017f88cf4cfa83196c7",
       "binary": false
     },
     {
       "path": "internal/modules/settings/application/site_normalize.go",
-      "before_sha256": "329c5feb4e6b7b7bdd226c19f8cb8e4634932d5097656c63274d69076fb10855",
-      "after_sha256": "c67a3fd2fdedca028c65921fbbb0b4653bfd6e85693c5e0d7dd19e610ba74eb4",
+      "before_sha256": "c3cc6cb3f5152f320e99ca60070146ed1f8694179623614c7d14de173786a697",
+      "after_sha256": "3331fab277ab92bae1b0adb090a9181324549546901b7e2435684e6544280bb7",
       "binary": false
     },
     {
       "path": "internal/modules/settings/application/site_normalize_test.go",
-      "before_sha256": "0956a89dbdc35185cc03766f8a848e8a11dc0f6bd0d05583e4ca63b99fe17fa3",
-      "after_sha256": "39b4a289f938cf00bc16caa11c41d7c4c5f76319a3c9069f287cc7bf3c0f1ca3",
+      "before_sha256": "a55118fdaecf5dda73a2c83adef0e071de120af98f51ee27e546578f4f0196cc",
+      "after_sha256": "2bdb934bd58b04e83e2668f5857148f9a6c731b34a01e45e103c344bf0df4dc8",
       "binary": false
     },
     {
@@ -372,7 +366,7 @@
     }
   ],
   "version_guards": {
-    "go.mod": "86c02fa3bc442960ac50887c3871ac213cfc09346d4ebeb919358ccc48af1e22",
+    "go.mod": "07a29b8453842c21bbb3a0b714b9217dfa6addc3740a324b23c332916c031a71",
     "frontend/user/package.json": "6b25dcc29b43252a15ccc3ba2e4980606ef607030501fa86ff328091940b4147",
     "frontend/user/pnpm-lock.yaml": "eedfdf193348feac6654531818c1d8a1f677d1196576350b713b7ef0d0245904",
     "frontend/admin/package.json": "93672d1cd9e178c6e63e73fee1da6eceeec0d41ae6cdb1765bf0c39b62a23290",

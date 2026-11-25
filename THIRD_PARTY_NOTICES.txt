@@ -1,5 +1,5 @@
 Dujiao-Next: https://github.com/dujiao-next/dujiao-next
-Base: v1.5.2 / c8144b2bf4024a999a6567e71f2763baba12a6bc
-Template: kaxiaopu 1.0.0; derived storefront components and integration changes retain the project GPL-3.0 license (see LICENSE).
+Base: v1.6.1 / f7b4354f121bae4f265724c687042ebea1a5934a
+Template: kaxiaopu 1.1.0; derived storefront components and integration changes retain the project GPL-3.0 license (see LICENSE).
 Inter variable font retains its license at payload/frontend/user/src/assets/fonts/OFL.txt.
 No site-specific business database or credentials are distributed.

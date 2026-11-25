@@ -3,7 +3,7 @@
     <!-- 首次访问还不知道站点用哪套模板时先不渲染外壳，等配置返回（见 shellReady） -->
     <template v-if="shellReady">
       <!-- vault 模板：自带顶栏/页脚的外壳包裹页面（控制台仍走下方分支） -->
-      <component :is="activeLayout" v-if="activeTemplate !== 'classic' && !isResellerConsole" :key="activeTemplate">
+      <component :is="activeLayout" v-if="(activeTemplate === 'vault' || activeTemplate === 'kaxiaopu') && !isResellerConsole" :key="activeTemplate">
         <ErrorBoundary>
           <RouterView v-slot="{ Component }">
             <Transition name="page-fade" mode="out-in">
@@ -12,6 +12,17 @@
           </RouterView>
         </ErrorBoundary>
       </component>
+
+      <!-- atelier 模板：Prism 精密科技外壳（悬浮导航 + 点阵画布 + 靛蓝令牌） -->
+      <AtelierLayout v-else-if="activeTemplate === 'atelier' && !isResellerConsole">
+        <ErrorBoundary>
+          <RouterView v-slot="{ Component }">
+            <Transition name="page-fade" mode="out-in">
+              <component :is="Component" />
+            </Transition>
+          </RouterView>
+        </ErrorBoundary>
+      </AtelierLayout>
 
       <!-- classic 模板 / 分销控制台（保持原有结构不变） -->
       <template v-else>
@@ -51,8 +62,9 @@ import ErrorBoundary from './components/ErrorBoundary.vue'
 import BackToTop from './components/BackToTop.vue'
 import MobileBottomNav from './components/MobileBottomNav.vue'
 
-// vault 外壳按需加载，classic 用户不会拉取其 chunk/样式
+// 独立模板外壳按需加载，classic 用户不会拉取其 chunk/样式
 const VaultLayout = defineAsyncComponent(() => import('./templates/vault/layout/VaultLayout.vue'))
+const AtelierLayout = defineAsyncComponent(() => import('./templates/atelier/layout/AtelierLayout.vue'))
 const KaxiaopuLayout = defineAsyncComponent(() => import('./templates/kaxiaopu/layout/VaultLayout.vue'))
 
 // config 由 router.beforeEach 统一加载，无需在此重复调用
